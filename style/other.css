@@ -1,0 +1,433 @@
+html, body {
+  margin: 15;
+  padding: 0;
+  background: #faf8ef;
+  color: #776e65;
+  font-family: "Clear Sans", "Helvetica Neue", "Microsoft Yahei",  Arial, sans-serif;
+  font-size: 18px; 
+}
+
+.game-container .game-message a {
+  display: inline-block;
+  background: rgba(255,255,255,0);
+  border-radius: 3px;
+  font-size: 17px;
+  padding: 0 20px;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #776e65;
+  height: 40px;
+  line-height: 42px;
+  margin-left: 9px; 
+  -webkit-animation: pop-on 600ms ease-in;
+  -moz-animation: pop-on 600ms ease-in;
+  animation: pop-on 600ms ease-in;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both; 
+  animation-delay: 2000ms;
+  -webkit-animation-delay: 2000ms;
+}
+
+.game-container .game-message .keep-playing-button {
+  -webkit-animation: pop-on 600ms ease-in;
+  -moz-animation: pop-on 600ms ease-in;
+  animation: pop-on 600ms ease-in;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both; 
+  animation-delay: 1700ms;
+  -webkit-animation-delay: 1700ms;
+}
+
+@-webkit-keyframes pop-on{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes pop-on{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes pop-on{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.above-game:after {
+  content: "";
+  display: block;
+  clear: both; 
+}
+
+.heading:after {
+  content: "";
+  display: block;
+  clear: both; 
+}
+
+.score-container:after {
+  content: "得分"; 
+}
+
+.best-container:after {
+  content: "最高得分"; 
+}
+
+h1.title {
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0;
+  display: block;
+  float: left; 
+}
+
+.game-intro {
+  float: left;
+  line-height: 42px;
+  margin-bottom: 0; 
+}
+
+.restart-button {
+  display: inline-block;
+  background: #8f7a66;
+  border-radius: 3px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #f9f6f2;
+  height: 40px;
+  line-height: 42px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  float: right;
+}
+
+.game-explanation {
+  margin-top: 50px; 
+}
+
+.score{
+  font-size: 25px;
+  margin-top: 15px;
+}
+
+.score span{
+  font-size: 23px;
+  color: #ff6600;
+}
+
+.game-container .game-message.game-won div.score {
+  opacity: 0;
+}
+
+.game-container .game-message.game-won span.score {
+  opacity: 0;
+}
+
+.game-container .game-message p {
+  font-size: 30px;
+  height: 60px;
+  line-height: 40px;
+  margin-top: 222px; 
+}
+
+@media screen and (max-width: 480px) {
+  .game-container .game-message p{
+    font-size: 22px !important; 
+  } 
+
+  div.score{
+    font-size: 19px;
+    margin-top: 30px;
+  }
+
+  .score span{
+    font-size: 18px;
+  }
+
+  html, body {
+    font-size: 15px; 
+  }
+
+  body {
+    margin: 20px 0;
+    padding: 0 20px; 
+  }
+
+  h1.title {
+    font-size: 27px;
+    margin-top: 15px; 
+  }
+  
+  .restart-button {
+    width: 42%;
+    padding: 0;
+    display: block;
+    box-sizing: border-box;
+    margin-top: 2px;
+  }
+
+   .heading {
+    margin-bottom: 10px; 
+  }
+
+  .game-intro {
+    width: 55%;
+    display: block;
+    box-sizing: border-box;
+    line-height: 1.65; 
+  }
+
+  .score-container .score-addition, .best-container .score-addition {
+    font-size: 15px;
+  }
+
+  .score-container, .best-container {
+    font-size: 15px;
+  }
+}
+
+.tile {
+  position: absolute;
+  -webkit-transition: 100ms ease-in-out;
+  -moz-transition: 100ms ease-in-out;
+  transition: 100ms ease-in-out;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform; 
+}
+
+.tile .tile-inner {
+  border-radius: 3px;
+  background: #eee4da;
+  text-align: center;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.tile .tile-inner {
+  border-radius: 3px;
+  background: #eee4da;
+  text-align: center;
+  font-weight: bold;
+  z-index: 10;
+  font-size: 55px; 
+}
+
+.tile.tile-2 .tile-inner {
+  color: #17130f;
+  font-size: 28px;
+  background: #00c8ff url("../images/堀川雷鼓.jpg");
+  background-size: cover;
+  line-height: 183px;
+  text-align: right;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); 
+}
+
+@media screen and (max-width: 520px) {
+  .tile.tile-2 .tile-inner {
+    font-size: 15px; 
+    line-height: 100px;
+  } 
+}
+
+.tile.tile-4 .tile-inner {
+  color: #17130f;
+  font-size: 28px;
+  background: #00b4ff url("../images/雾雨魔理沙.jpg");
+  background-size: cover;
+  line-height: 183px;
+  text-align: right;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); 
+}
+
+@media screen and (max-width: 520px) {
+  .tile.tile-4 .tile-inner {
+    font-size: 15px; 
+    line-height: 100px;
+  } 
+}
+
+.tile.tile-8 .tile-inner {
+  color: #17130f;
+  font-size: 28px;
+  background: #00a0ff url("../images/稀神探女.jpg"); 
+  background-size: cover;
+  line-height: 183px;
+  text-align: right;
+}
+
+@media screen and (max-width: 520px) {
+  .tile.tile-8 .tile-inner {
+    font-size: 15px; 
+    line-height: 100px;
+  } 
+}
+
+.tile.tile-16 .tile-inner {
+  color: #17130f;
+  font-size: 28px;
+  background: #008cff url("../images/埴安神袿姬.jpg"); 
+  background-size: cover;
+  line-height: 183px;
+  text-align: right;
+}
+
+@media screen and (max-width: 520px) {
+  .tile.tile-16 .tile-inner {
+    font-size: 15px; 
+    line-height: 100px;
+  } 
+}
+
+.tile.tile-32 .tile-inner {
+  color: #17130f;
+  font-size: 28px;
+  background: #0078ff url("../images/高丽野阿吽.jpg"); 
+  background-size: cover;
+  line-height: 183px;
+  text-align: right;
+}
+
+@media screen and (max-width: 520px) {
+  .tile.tile-32 .tile-inner {
+    font-size: 15px; 
+    line-height: 100px;
+  } 
+}
+
+.tile.tile-64 .tile-inner {
+  color: #17130f;
+  font-size: 28px;
+  background: #0064ff url("../images/十六夜咲夜.jpg"); 
+  background-size: cover;
+  line-height: 183px;
+  text-align: right;
+}
+
+@media screen and (max-width: 520px) {
+  .tile.tile-64 .tile-inner {
+    font-size: 15px; 
+    line-height: 100px;
+  } 
+}
+
+.tile.tile-128 .tile-inner {
+  color: #17130f;
+  font-size: 28px;
+  background: #ffb400 url("../images/铃仙&因幡帝.jpg");
+  background-size: cover;
+  line-height: 183px;
+  text-align: right;
+  box-shadow: 0 0 30px 10px rgba(255, 200, 0, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
+}
+  @media screen and (max-width: 520px) {
+    .tile.tile-128 .tile-inner {
+      font-size: 15px; 
+      line-height: 100px;
+    } 
+  }
+
+.tile.tile-256 .tile-inner {
+  color: #17130f;
+  font-size: 28px; 
+  background: #ff9c00 url("../images/射命丸文.jpg");
+  background-size: cover;
+  line-height: 183px;
+  text-align: right;
+  box-shadow: 0 0 30px 10px rgba(255, 176, 0, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+}
+  @media screen and (max-width: 520px) {
+    .tile.tile-256 .tile-inner {
+      font-size: 15px; 
+      line-height: 100px;
+    } 
+  }
+
+.tile.tile-512 .tile-inner {
+  color: #17130f;
+  font-size: 28px; 
+  background: #ff8400 url("../images/东风谷早苗.jpg");
+  background-size: cover;
+  line-height: 183px;
+  text-align: right;
+  box-shadow: 0 0 30px 10px rgba(255, 152, 0, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+}
+  @media screen and (max-width: 520px) {
+    .tile.tile-512 .tile-inner {
+      font-size: 15px; 
+      line-height: 100px;
+    } 
+  }
+.tile.tile-1024 .tile-inner {
+  color: #17130f;
+  font-size: 28px; 
+  background: #ff6c00 url("../images/妖梦&幽幽子.jpg");
+  background-size: cover;
+  line-height: 183px;
+  text-align: right;
+  box-shadow: 0 0 30px 10px rgba(255, 128, 0, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
+}
+  @media screen and (max-width: 520px) {
+    .tile.tile-1024 .tile-inner {
+      font-size: 15px; 
+      line-height: 100px;
+    } 
+  }
+
+.tile.tile-2048 .tile-inner {
+  color: #17130f;
+  font-size: 28px; 
+  background: #ff5400 url("../images/博丽灵梦.jpg");
+  background-size: cover;
+  line-height: 183px;
+  text-align: right;
+  box-shadow: 0 0 30px 10px rgba(255, 104, 0, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+}
+  @media screen and (max-width: 520px) {
+    .tile.tile-2048 .tile-inner {
+      font-size: 15px; 
+      line-height: 100px;
+    } 
+  }
+
+.tile.tile-4096 .tile-inner {
+  color: #17130f;
+  font-size: 28px; 
+  background: #ff3c00 url("../images/庭渡久侘歌.jpg");
+  background-size: cover;
+  line-height: 183px;
+  text-align: right;
+  box-shadow: 0 0 30px 10px rgba(255, 80, 0, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+  }
+  @media screen and (max-width: 520px) {
+   .tile.tile-4096 .tile-inner {
+    font-size: 15px; 
+    line-height: 100px;
+  } 
+}
+  
+.tile.tile-super .tile-inner {
+  color: #f9f6f2;
+  background: #3c3a32;
+  font-size: 28px; 
+}
+  @media screen and (max-width: 520px) {
+    .tile.tile-super .tile-inner {
+      font-size: 15px; 
+    } 
+  }
