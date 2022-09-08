@@ -6,6 +6,7 @@
 
   <link href="style/main.css" rel="stylesheet" type="text/css">
   <link href="style/other.css" rel="stylesheet" type="text/css">
+  <link href="style/group1.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -77,14 +78,19 @@
       </div>
     </div>
       <hr />
+	  <div class = "current-status">
+		  <p class = "MaxNum">当前最大数：<span></span>（<span></span>）</p>
+		  <p class = "Diffculty">难度：<span></span></p>
+	  </div>
       <p class="game-explanation">
-       Version: 2022.1.1 （Ver 6.0.0.0 冬季正式版）<br />
+       Version: 2022.9.1<br />
       <strong class="important">规则：</strong>使用<strong>上下左右键</strong>移动（触屏设备请直接滑动手指），相同的两个立绘合并后会变成<strong>新的立绘</strong>。
     <hr>
     <p>
     二次创作：<a href="https://github.com/perfectboy/">perfectboy</a>；
     原作：<a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli</a>。
     </p>
+	<p>二组戳→<a href="index_alter.html">SF21</a></p>
   </div>
 
   <script src="js/bind_polyfill.js"></script>
@@ -97,6 +103,8 @@
   <script src="js/local_storage_manager.js"></script>
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
-
+  <script>
+	  window.group = "Group1";
+	  </script>
 </body>
 </html>

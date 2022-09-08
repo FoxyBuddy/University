@@ -9,6 +9,37 @@
 }
 
 @font-face {
+    font-family: "NewCinemaB";
+	src: url("FOT-NewCinemaBStd-D.otf")/*tpa=http://www.csie.ntu.edu.tw/~b01902112/65536/style/fonts/ClearSans-Light-webfont.woff*/ format("opentype");
+    font-style: normal;
+	unicode-range: U+3000-A000;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Revue";
+    src: url("RevueEF.woff")/*tpa=http://www.csie.ntu.edu.tw/~b01902112/65536/style/fonts/ClearSans-Light-webfont.woff*/ format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "HarmonyOS";
+    src: url("HarmonyOS_Sans_SC_Medium.woff")/*tpa=http://www.csie.ntu.edu.tw/~b01902112/65536/style/fonts/ClearSans-Light-webfont.woff*/ format("woff");
+    font-weight: normal;
+	unicode-range: U+3000-A000;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "HarmonyOS";
+    src: url("HarmonyOS_Sans_SC_Bold.woff")/*tpa=http://www.csie.ntu.edu.tw/~b01902112/65536/style/fonts/ClearSans-Light-webfont.woff*/ format("woff");
+    font-weight: 700;
+	unicode-range: U+3000-A000;
+    font-style: normal;
+}
+
+@font-face {
     font-family: "Clear Sans";
     src: url("ClearSans-Regular-webfont.eot")/*tpa=http://www.csie.ntu.edu.tw/~b01902112/65536/style/fonts/ClearSans-Regular-webfont.eot*/;
     src: url("ClearSans-Regular-webfont.eot-#iefix")/*tpa=http://www.csie.ntu.edu.tw/~b01902112/65536/style/fonts/ClearSans-Regular-webfont.eot?#iefix*/ format("embedded-opentype"),
