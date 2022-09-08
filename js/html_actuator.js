@@ -32,10 +32,77 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
     self.updateScore(metadata.score);
     self.updateBestScore(metadata.bestScore);
     var maxscore = 0;
+	var name = ["魔理沙", "维哥", "大成哥", "丛兵", 
+						   "刚欲组长", "雨森", "王健", "泽哥", 
+						   "大瀚哥", "大天狗", "天健", "大俊哥", 
+						   "荷取", "三花", 
+						   "东润", "芙兰", "狸子哥", "郭哥",
+						   "永琳", "紫苑", "诺哥", "琦哥",
+						   "灵梦", "萃香", "成哥", "大泽哥",
+						   "旗哥", "年玉博"];
+	var touhouname = [
+		"霧雨　魔理沙", "魂魄　妖夢", "山城　たかね", "星熊　勇儀",
+		"饕餮　尤魔", "庭渡　久侘歌", "鬼人　正邪", "犬走　椛",
+		"八坂　神奈子", "飯綱丸　龍", "天弓　千亦", "少名　針妙丸",
+		"河城　にとり", "豪徳寺　ミケ", 
+		"堀川　雷鼓", "フラン", "二ッ岩　マミゾウ", "吉弔　八千慧",
+		"八意　永琳", "依神　紫苑", "東風谷　早苗", "驪駒　早鬼",
+		"博麗　霊夢", "伊吹　萃香", "菅牧　典", "茨木　華扇",
+		"鈴仙・Ｕ・イナバ", "比那名居　天子"];
     for(i in grid.cells){
       for(j in grid.cells[i]){
         if(grid.cells[i][j]){
           maxscore = maxscore > grid.cells[i][j].value ? maxscore : grid.cells[i][j].value;
+		  var currentMax = document.getElementsByTagName("span")[1], 
+				 thname = document.getElementsByTagName("span")[2],
+				 Diffculty = document.getElementsByTagName("span")[3];
+				 Diffculty.className = "Mode";
+		  currentMax.classList.add("currentMax");
+		  thname.classList.add("THName");
+		  if (Math.log2(maxscore) % 1 === 0 && Math.log2(maxscore) <= 14){
+			  if (window.group == "Group1"){
+				  currentMax.textContent = name[Math.log2(maxscore) - 1];
+				  thname.textContent = touhouname[Math.log2(maxscore) - 1];
+			  }
+			if (window.group == "Group2"){
+				currentMax.textContent = name[13 + Math.log2(maxscore)];
+				thname.textContent = touhouname[13 + Math.log2(maxscore)];
+			}
+		  }
+		  else{
+			  currentMax.textContent = maxscore;
+			  thname.textContent = maxscore;
+		  }
+		  if (maxscore < 2048){
+			  Diffculty.classList.remove(Diffculty.className);
+			  Diffculty.className = "Easy_Mode";
+			  Diffculty.classList.add(Diffculty.className);
+			  Diffculty.textContent = "EASY";
+		  }
+		  else if (maxscore >= 2048 && maxscore < 4096){
+			  Diffculty.classList.remove(Diffculty.className);
+			  Diffculty.className = "Normal_Mode";
+			  Diffculty.classList.add(Diffculty.className);
+			  Diffculty.textContent = "NORMAL";
+		  }
+		  else if (maxscore >= 4096 && maxscore < 8192){
+			  Diffculty.classList.remove(Diffculty.className);
+			  Diffculty.className = "Hard_Mode";
+			  Diffculty.classList.add(Diffculty.className);
+		  			  Diffculty.textContent = "HARD";
+		  }
+		  else if (maxscore >= 8192 && maxscore < 16384){
+			  Diffculty.classList.remove(Diffculty.className);
+			  Diffculty.className = "Lunatic_Mode";
+			  Diffculty.classList.add(Diffculty.className);
+		  			  Diffculty.textContent = "LUNATIC";
+		  }
+		  else if (maxscore >= 16384){
+			  Diffculty.classList.remove(Diffculty.className);
+			  Diffculty.className = "OverDrive_Mode";
+			  Diffculty.classList.add(Diffculty.className);
+		  	  Diffculty.textContent = "OVERDRIVE";
+		  }
         }
       }
     }
@@ -43,6 +110,7 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
     if (metadata.terminated) {
       if (metadata.over) {
         self.message(false, maxscore); // You lose
+	
       } else if (metadata.won) {
         self.message(true); // You win!
       }
@@ -142,7 +210,7 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
   this.bestContainer.textContent = xlcThousands(bestScore);
 };
 
-HTMLActuator.prototype.message = function (won) {
+HTMLActuator.prototype.message = function (won, maxScore) {
 
   var type    = won ? "game-won" : "game-over";
   var message = won ? "Normal Legacy Clear!" : "满身疮痍。。。";
