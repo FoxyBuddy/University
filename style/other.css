@@ -262,9 +262,9 @@ h1.title {
   font-size: 55px; 
 }
 
-.tile.tile-super .tile-inner {
+.tile.tile-65536 .tile-inner {
   color: #f9f6f2;
-  background: #3c3a32;
+  background: #1e22ff;
   font-size: 28px; 
 }
   @media screen and (max-width: 520px) {
@@ -272,3 +272,15 @@ h1.title {
       font-size: 15px; 
     } 
   }
+
+  .tile.tile-131072 .tile-inner {
+    color: #f9f6f2;
+    background: #2395ff;
+    font-size: 28px; 
+  }
+    @media screen and (max-width: 520px) {
+      .tile.tile-super .tile-inner {
+        font-size: 15px; 
+      } 
+    }
+  

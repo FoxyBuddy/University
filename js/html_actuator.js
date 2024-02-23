@@ -32,46 +32,33 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
     self.updateScore(metadata.score);
     self.updateBestScore(metadata.bestScore);
     var maxscore = 0;
-	var name = ["魔理沙", "维哥", "大成哥", "丛兵", 
-						   "刚欲组长", "雨森", "王健", "泽哥", 
-						   "大瀚哥", "大天狗", "天健", "大俊哥", 
-						   "荷取", "三花", 
-						   "东润", "芙兰", "狸子哥", "郭哥",
-						   "永琳", "紫苑", "诺哥", "琦哥",
-						   "灵梦", "萃香", "成哥", "大泽哥",
-						   "旗哥", "年玉博"];
-	var touhouname = [
-		"霧雨　魔理沙", "魂魄　妖夢", "山城　たかね", "星熊　勇儀",
-		"饕餮　尤魔", "庭渡　久侘歌", "鬼人　正邪", "犬走　椛",
-		"八坂　神奈子", "飯綱丸　龍", "天弓　千亦", "少名　針妙丸",
-		"河城　にとり", "豪徳寺　ミケ", 
-		"堀川　雷鼓", "フラン", "二ッ岩　マミゾウ", "吉弔　八千慧",
-		"八意　永琳", "依神　紫苑", "東風谷　早苗", "驪駒　早鬼",
-		"博麗　霊夢", "伊吹　萃香", "菅牧　典", "茨木　華扇",
-		"鈴仙・Ｕ・イナバ", "比那名居　天子"];
+	var name = [
+    "茂八", "吉克", "龙哥", "老班", 
+    "杰诺", "大龙哥", "狼刃", "胖哥", 
+    "鲍里斯", "猴哥", "佐助", "平哥", 
+    "沃杰", "小龙哥","图班", 
+    "大源哥", "子纵", "峻玮", "鹏哥",
+    "禄哥", "涛哥", "雨森", "灵梦",
+    "泽哥", "魔理沙", "俊哥", "铭哥",
+    "权哥", "大飞哥","三花"];
     for(i in grid.cells){
       for(j in grid.cells[i]){
         if(grid.cells[i][j]){
           maxscore = maxscore > grid.cells[i][j].value ? maxscore : grid.cells[i][j].value;
 		  var currentMax = document.getElementsByTagName("span")[1], 
-				 thname = document.getElementsByTagName("span")[2],
-				 Diffculty = document.getElementsByTagName("span")[3];
+				 Diffculty = document.getElementsByTagName("span")[2];
 				 Diffculty.className = "Mode";
 		  currentMax.classList.add("currentMax");
-		  thname.classList.add("THName");
 		  if (Math.log2(maxscore) % 1 === 0 && Math.log2(maxscore) <= 14){
 			  if (window.group == "Group1"){
 				  currentMax.textContent = name[Math.log2(maxscore) - 1];
-				  thname.textContent = touhouname[Math.log2(maxscore) - 1];
 			  }
 			if (window.group == "Group2"){
-				currentMax.textContent = name[13 + Math.log2(maxscore)];
-				thname.textContent = touhouname[13 + Math.log2(maxscore)];
+				currentMax.textContent = name[14 + Math.log2(maxscore)];
 			}
 		  }
 		  else{
 			  currentMax.textContent = maxscore;
-			  thname.textContent = maxscore;
 		  }
 		  if (maxscore < 2048){
 			  Diffculty.classList.remove(Diffculty.className);
