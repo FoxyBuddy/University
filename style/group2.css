@@ -1,8 +1,10 @@
 .tile.tile-2 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/724堀川雷鼓.png");
-  background-size: cover;
+  background: #fefefe url("../images/ug_06.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); 
@@ -18,8 +20,10 @@
 .tile.tile-4 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/704芙兰朵露.png");
-  background-size: cover;
+  background: #fefefe url("../images/ug_05.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
   box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); 
@@ -35,8 +39,10 @@
 .tile.tile-8 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/612二岩猯藏.png"); 
-  background-size: cover;
+  background: #fefefe url("../images/ug_11.png"); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
 }
@@ -51,8 +57,10 @@
 .tile.tile-16 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/1013吉吊八千慧.png"); 
-  background-size: cover;
+  background: #fefefe url("../images/ug_10.png"); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
 }
@@ -67,8 +75,10 @@
 .tile.tile-32 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/709八意永琳.png"); 
-  background-size: cover;
+  background: #fefefe url("../images/ug_09.png"); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
 }
@@ -83,8 +93,10 @@
 .tile.tile-64 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/717依神紫苑.png"); 
-  background-size: cover;
+  background: #fefefe url("../images/ug_14.png"); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
 }
@@ -99,8 +111,10 @@
 .tile.tile-128 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/706东风谷早苗.png");
-  background-size: cover;
+  background: #fefefe url("../images/ug_12.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
   box-shadow: 0 0 30px 10px rgba(255, 200, 0, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
@@ -115,8 +129,10 @@
 .tile.tile-256 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/815骊驹早鬼.png");
-  background-size: cover;
+  background: #fefefe url("../images/ug_01.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
   box-shadow: 0 0 30px 10px rgba(255, 176, 0, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
@@ -131,8 +147,10 @@
 .tile.tile-512 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/705博丽灵梦.png");
-  background-size: cover;
+  background: #fefefe url("../images/ug_13.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
   box-shadow: 0 0 30px 10px rgba(255, 152, 0, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
@@ -146,8 +164,10 @@
 .tile.tile-1024 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/718伊吹萃香.png");
-  background-size: cover;
+  background: #fefefe url("../images/ug_02.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
   box-shadow: 0 0 30px 10px rgba(255, 128, 0, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
@@ -162,8 +182,10 @@
 .tile.tile-2048 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/720菅牧典.png");
-  background-size: cover;
+  background: #fefefe url("../images/ug_15.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
   box-shadow: 0 0 30px 10px rgba(255, 104, 0, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
@@ -178,8 +200,10 @@
 .tile.tile-4096 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/415茨木华扇.png");
-  background-size: cover;
+  background: #fefefe url("../images/ug_08.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
   box-shadow: 0 0 30px 10px rgba(255, 80, 0, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
@@ -194,8 +218,10 @@
 .tile.tile-8192 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/716铃仙·U·因幡.png");
-  background-size: cover;
+  background: #fefefe url("../images/ug_04.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
   box-shadow: 0 0 30px 10px rgba(255, 80, 0, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
@@ -210,14 +236,34 @@
 .tile.tile-16384 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/504比那名居天子.png");
-  background-size: cover;
+  background: #fefefe url("../images/ug_07.png");
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
   line-height: 183px;
   text-align: right;
   box-shadow: 0 0 30px 10px rgba(255, 80, 0, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
   }
   @media screen and (max-width: 520px) {
    .tile.tile-16384 .tile-inner {
+    font-size: 15px; 
+    line-height: 100px;
+  } 
+}
+
+.tile.tile-32768 .tile-inner {
+  color: #17130f;
+  font-size: 28px; 
+  background: #fefefe url("../images/ug_03.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  line-height: 183px;
+  text-align: right;
+  box-shadow: 0 0 30px 10px rgba(255, 80, 0, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+  }
+  @media screen and (max-width: 520px) {
+   .tile.tile-32768 .tile-inner {
     font-size: 15px; 
     line-height: 100px;
   } 
