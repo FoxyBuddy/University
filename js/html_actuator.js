@@ -46,7 +46,8 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
         if(grid.cells[i][j]){
           maxscore = maxscore > grid.cells[i][j].value ? maxscore : grid.cells[i][j].value;
 		  var currentMax = document.getElementsByTagName("span")[1], 
-				 Diffculty = document.getElementsByTagName("span")[2];
+				 Diffculty = document.getElementsByTagName("span")[3];
+         document.getElementsByTagName("span")[2].innerHTML = maxscore;
 				 Diffculty.className = "Mode";
 		  currentMax.classList.add("currentMax");
 		  if (Math.log2(maxscore) % 1 === 0 && Math.log2(maxscore) <= 14){
