@@ -121,6 +121,10 @@ html, body {
   content: "最高得分"; 
 }
 
+.score-container,.best-container {
+  font-size: 23px; 
+}
+
 h1.title {
   font-size: 50px;
   font-weight: bold;
