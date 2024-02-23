@@ -50,7 +50,7 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
          document.getElementsByTagName("span")[2].innerHTML = maxscore;
 				 Diffculty.className = "Mode";
 		  currentMax.classList.add("currentMax");
-		  if (Math.log2(maxscore) % 1 === 0 && Math.log2(maxscore) <= 14){
+		  if (Math.log2(maxscore) % 1 === 0 && Math.log2(maxscore) <= 15){
 			  if (window.group == "Group1"){
 				  currentMax.textContent = name[Math.log2(maxscore) - 1];
 			  }
