@@ -62,10 +62,14 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 		   if(grid.cells[i][j].value >= 1024){
 				total_sum_finals += grid.cells[i][j].value;
 				document.getElementsByTagName("span")[10].innerHTML = (total_sum_finals  - maxscore) / 1024;
+		   } else {
+				document.getElementsByTagName("span")[10].innerHTML = 0;
 		   }
 		  
 		  if (maxscore >= 1024) {
 			document.getElementsByTagName("span")[11].innerHTML = maxscore / 1024;
+		  } else {
+			document.getElementsByTagName("span")[11].innerHTML = 0;
 		  }
 		  
 		  if (maxscore < 2048){
