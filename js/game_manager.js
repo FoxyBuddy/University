@@ -6,6 +6,8 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.spawn_2 = 0;
   this.spawn_4 = 0;
   this.total_spawn = 0;
+  this.moves = 0;
+  
   this.startTiles     = 2;
 
   this.inputManager.on("move", this.move.bind(this));
@@ -53,6 +55,7 @@ GameManager.prototype.setup = function () {
 	this.spawn_2 = previousState.spawn_2;
 	this.spawn_4 = previousState.spawn_4;
 	this.total_spawn = previousState.total_spawn;
+	this.moves = previousState.moves;
   } else {
     this.grid        = new Grid(this.size);
     this.score       = 0;
@@ -63,6 +66,7 @@ GameManager.prototype.setup = function () {
 	this.spawn_2 = 0;
 	this.spawn_4 = 0;
 	this.total_spawn = 0;
+	this.moves = 0;
 
     // Add the initial tiles
     this.addStartTiles();
@@ -118,12 +122,14 @@ GameManager.prototype.actuate = function () {
 	spawn_2: this.spawn_2,
 	spawn_4: this.spawn_4,
 	total_spawn: this.total_spawn,
+	moves: this.moves,
     terminated: this.isGameTerminated()
   });
 	document.getElementsByTagName("span")[4].innerHTML = this.spawn_2;
 	document.getElementsByTagName("span")[5].innerHTML = this.spawn_4;
 	document.getElementsByTagName("span")[6].innerHTML = this.total_spawn;
 	document.getElementsByTagName("span")[7].innerHTML = (this.four_percent * 100).toFixed(2) + "%";
+	document.getElementsByTagName("span")[8].innerHTML = this.moves;
 };
 
 // Represent the current game as an object
@@ -137,6 +143,7 @@ GameManager.prototype.serialize = function () {
     score:       this.score,
     over:        this.over,
     won:         this.won,
+	moves:	this.moves,
     keepPlaying: this.keepPlaying
   };
 };
@@ -213,6 +220,7 @@ GameManager.prototype.move = function (direction) {
   });
 
   if (moved) {
+	this.moves++;
     this.addRandomTile();
 
     if (!this.movesAvailable()) {
