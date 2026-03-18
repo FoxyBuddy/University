@@ -61,16 +61,14 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 		  document.getElementsByTagName("span")[9].innerHTML = total_sum;
 		   if(grid.cells[i][j].value >= 1024){
 				total_sum_finals += grid.cells[i][j].value;
-				document.getElementsByTagName("span")[10].innerHTML = (total_sum_finals  - maxscore) / 1024;
-		   } else {
-				document.getElementsByTagName("span")[10].innerHTML = 0;
 		   }
-		  
-		  if (maxscore >= 1024) {
-			document.getElementsByTagName("span")[11].innerHTML = maxscore / 1024;
-		  } else {
-			document.getElementsByTagName("span")[11].innerHTML = 0;
-		  }
+		   if (total_sum_finals  - maxscore > 0){ 
+				document.getElementsByTagName("span")[10].innerHTML = ((total_sum_finals  - maxscore) / 1024).toFixed(0);
+		   } else {
+			   document.getElementsByTagName("span")[10].innerHTML = (-(total_sum_finals  - maxscore) / 1024).toFixed(0);
+		   }
+		   
+		 document.getElementsByTagName("span")[11].innerHTML = (maxscore / 1024).toFixed(0);
 		  
 		  if (maxscore < 2048){
 			  Diffculty.classList.remove(Diffculty.className);
@@ -116,7 +114,6 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 		  }
         }
       }
-	  
     }
 	total_sum = 0;
 	total_sum_finals = 0;
