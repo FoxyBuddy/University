@@ -59,12 +59,12 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 		  }
 		  
 		  document.getElementsByTagName("span")[9].innerHTML = total_sum;
-		   if(grid.cells[i][j].value > 1024){
+		   if(grid.cells[i][j].value >= 1024){
 				total_sum_finals += grid.cells[i][j].value;
 				document.getElementsByTagName("span")[10].innerHTML = (total_sum_finals  - maxscore) / 1024;
 		   }
 		  
-		  if (maxscore >= 2048) {
+		  if (maxscore >= 1024) {
 			document.getElementsByTagName("span")[11].innerHTML = maxscore / 1024;
 		  }
 		  
