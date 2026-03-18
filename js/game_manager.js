@@ -3,7 +3,9 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.inputManager   = new InputManager;
   this.storageManager = new StorageManager;
   this.actuator       = new Actuator;
-
+  this.spawn_2 = 0;
+  this.spawn_4 = 0;
+  this.total_spawn = 0;
   this.startTiles     = 2;
 
   this.inputManager.on("move", this.move.bind(this));
@@ -47,17 +49,24 @@ GameManager.prototype.setup = function () {
     this.over        = previousState.over;
     this.won         = previousState.won;
     this.keepPlaying = previousState.keepPlaying;
+	this.four_percent = previousState.four_percent;
+	this.spawn_2 = previousState.spawn_2;
+	this.spawn_4 = previousState.spawn_4;
+	this.total_spawn = previousState.total_spawn;
   } else {
     this.grid        = new Grid(this.size);
     this.score       = 0;
     this.over        = false;
     this.won         = false;
     this.keepPlaying = false;
+	this.four_percent = 0;
+	this.spawn_2 = 0;
+	this.spawn_4 = 0;
+	this.total_spawn = 0;
 
     // Add the initial tiles
     this.addStartTiles();
   }
-
   // Update the actuator
   this.actuate();
 };
@@ -75,8 +84,15 @@ GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
     var value = Math.random() < 0.9 ? 2 : 4;
     var tile = new Tile(this.grid.randomAvailableCell(), value);
-
-    this.grid.insertTile(tile);
+	if (value == 2){
+	this.spawn_2++;
+	} else {
+	this.spawn_4++;
+	}
+	this.total_spawn++;
+    this.four_percent = this.spawn_4 / this.total_spawn;
+	this.grid.insertTile(tile);
+	
   }
 };
 
@@ -98,15 +114,26 @@ GameManager.prototype.actuate = function () {
     over:       this.over,
     won:        this.won,
     bestScore:  this.storageManager.getBestScore(),
+	four_percent: this.four_percent,
+	spawn_2: this.spawn_2,
+	spawn_4: this.spawn_4,
+	total_spawn: this.total_spawn,
     terminated: this.isGameTerminated()
   });
-
+	document.getElementsByTagName("span")[4].innerHTML = this.spawn_2;
+	document.getElementsByTagName("span")[5].innerHTML = this.spawn_4;
+	document.getElementsByTagName("span")[6].innerHTML = this.total_spawn;
+	document.getElementsByTagName("span")[7].innerHTML = (this.four_percent * 100).toFixed(2) + "%";
 };
 
 // Represent the current game as an object
 GameManager.prototype.serialize = function () {
   return {
     grid:        this.grid.serialize(),
+	four_percent: this.four_percent,
+	spawn_2: this.spawn_2,
+	spawn_4: this.spawn_4,
+	total_spawn: this.total_spawn,
     score:       this.score,
     over:        this.over,
     won:         this.won,
@@ -173,7 +200,7 @@ GameManager.prototype.move = function (direction) {
           // The mighty 2048 tile
           /* 2048 = Easy, 4096 = Normal, 8192 = Hard, 16384 = Lunatic,
              32768 = OverDrive*/
-          if (merged.value === 4096) self.won = true;
+          if (merged.value === 2048) self.won = true;
         } else {
           self.moveTile(tile, positions.farthest);
         }
