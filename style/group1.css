@@ -1,7 +1,7 @@
 .tile.tile-2 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/pg_00.png");
+  background: #fefefe url("../images/2.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,7 +20,7 @@
 .tile.tile-4 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/pg_08.png");
+  background: #fefefe url("../images/4.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -39,7 +39,7 @@
 .tile.tile-8 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/pg_02.png"); 
+  background: #fefefe url("../images/8.png"); 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -57,7 +57,7 @@
 .tile.tile-16 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/pg_11.png"); 
+  background: #fefefe url("../images/16.png"); 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -75,7 +75,7 @@
 .tile.tile-32 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/pg_01.png"); 
+  background: #fefefe url("../images/32.png"); 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -93,7 +93,7 @@
 .tile.tile-64 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/pg_09.png"); 
+  background: #fefefe url("../images/64.png"); 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -111,7 +111,7 @@
 .tile.tile-128 .tile-inner {
   color: #17130f;
   font-size: 28px;
-  background: #fefefe url("../images/pg_04.png");
+  background: #fefefe url("../images/128.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -129,7 +129,7 @@
 .tile.tile-256 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/pg_10.png");
+  background: #fefefe url("../images/256.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -147,7 +147,7 @@
 .tile.tile-512 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/pg_03.png");
+  background: #fefefe url("../images/512.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -164,7 +164,7 @@
 .tile.tile-1024 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/pg_13.png");
+  background: #fefefe url("../images/1024.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -182,7 +182,7 @@
 .tile.tile-2048 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/pg_05.png");
+  background: #fefefe url("../images/2048.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -200,7 +200,7 @@
 .tile.tile-4096 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/pg_14.png");
+  background: #fefefe url("../images/4096.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -218,7 +218,7 @@
 .tile.tile-8192 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/pg_07.png");
+  background: #fefefe url("../images/8192.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -236,7 +236,7 @@
 .tile.tile-16384 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/pg_12.png");
+  background: #fefefe url("../images/16384.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -254,7 +254,7 @@
 .tile.tile-32768 .tile-inner {
   color: #17130f;
   font-size: 28px; 
-  background: #fefefe url("../images/pg_06.png");
+  background: #fefefe url("../images/32768.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -264,6 +264,24 @@
   }
   @media screen and (max-width: 520px) {
    .tile.tile-32768 .tile-inner {
+    font-size: 15px; 
+    line-height: 100px;
+  } 
+}
+
+.tile.tile-65536 .tile-inner {
+  color: #17130f;
+  font-size: 28px; 
+  background: #fefefe url("../images/65536.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  line-height: 183px;
+  text-align: right;
+  box-shadow: 0 0 30px 10px rgba(255, 80, 0, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+  }
+  @media screen and (max-width: 520px) {
+   .tile.tile-65536 .tile-inner {
     font-size: 15px; 
     line-height: 100px;
   } 

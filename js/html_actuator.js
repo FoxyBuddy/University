@@ -33,34 +33,41 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
     self.updateBestScore(metadata.bestScore);
     var maxscore = 0;
 	var name = [
-    "茂八", "吉克", "龙哥", "老班", 
-    "杰诺", "大龙哥", "狼刃", "胖哥", 
-    "鲍里斯", "猴哥", "佐助", "平哥", 
-    "沃杰", "小龙哥","图班", 
-    "大源哥", "子纵", "峻玮", "鹏哥",
-    "禄哥", "涛哥", "雨森", "灵梦",
-    "泽哥", "魔理沙", "俊哥", "铭哥",
-    "权哥", "大飞哥","三花"];
+    "尼可", "茂八", "罗斯", "吉克", 
+    "佐助", "狼刃", "尼禄", "鲍里斯", 
+    "杰诺", "神", "龙", "夏目", 
+    "莉莉娅", "莱纳斯","沃杰", 
+    "图班"];
+	var total_sum = 0;
+	var total_sum_finals = 0;
     for(i in grid.cells){
       for(j in grid.cells[i]){
         if(grid.cells[i][j]){
+		total_sum += grid.cells[i][j].value;
           maxscore = maxscore > grid.cells[i][j].value ? maxscore : grid.cells[i][j].value;
 		  var currentMax = document.getElementsByTagName("span")[1], 
 				 Diffculty = document.getElementsByTagName("span")[3];
          document.getElementsByTagName("span")[2].innerHTML = maxscore;
+		 
 				 Diffculty.className = "Mode";
 		  currentMax.classList.add("currentMax");
-		  if (Math.log2(maxscore) % 1 === 0 && Math.log2(maxscore) <= 15){
-			  if (window.group == "Group1"){
+		  if (Math.log2(maxscore) % 1 === 0 && Math.log2(maxscore) <= 16){
 				  currentMax.textContent = name[Math.log2(maxscore) - 1];
-			  }
-			if (window.group == "Group2"){
-				currentMax.textContent = name[14 + Math.log2(maxscore)];
-			}
 		  }
 		  else{
 			  currentMax.textContent = maxscore;
 		  }
+		  
+		  document.getElementsByTagName("span")[8].innerHTML = total_sum;
+		   if(grid.cells[i][j].value >=1024){
+				total_sum_finals += grid.cells[i][j].value;
+				document.getElementsByTagName("span")[9].innerHTML = (total_sum_finals  - maxscore) / 1024;
+		   }
+		  
+		  if (maxscore >= 2048) {
+			document.getElementsByTagName("span")[10].innerHTML = maxscore / 1024;
+		  }
+		  
 		  if (maxscore < 2048){
 			  Diffculty.classList.remove(Diffculty.className);
 			  Diffculty.className = "Easy_Mode";
@@ -85,15 +92,30 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 			  Diffculty.classList.add(Diffculty.className);
 		  			  Diffculty.textContent = "LUNATIC";
 		  }
-		  else if (maxscore >= 16384){
+		  else if (maxscore >= 16384 && maxscore < 32768){
 			  Diffculty.classList.remove(Diffculty.className);
 			  Diffculty.className = "OverDrive_Mode";
 			  Diffculty.classList.add(Diffculty.className);
 		  	  Diffculty.textContent = "OVERDRIVE";
 		  }
+		  else if (maxscore >= 32768 && maxscore < 65536){
+			  Diffculty.classList.remove(Diffculty.className);
+			  Diffculty.className = "OverDrive_Mode";
+			  Diffculty.classList.add(Diffculty.className);
+		  	  Diffculty.textContent = "OVERDRIVE+";
+		  }
+		  else if (maxscore >= 65536){
+			  Diffculty.classList.remove(Diffculty.className);
+			  Diffculty.className = "OverDrive_Mode";
+			  Diffculty.classList.add(Diffculty.className);
+		  	  Diffculty.textContent = "OVERDRIVE++";
+		  }
         }
       }
+	  
     }
+	total_sum = 0;
+	total_sum_finals = 0;
 
     if (metadata.terminated) {
       if (metadata.over) {
@@ -132,7 +154,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
-  if (tile.value > 16384) classes.push("tile-super");
+  if (tile.value > 65536) classes.push("tile-super");
 
   this.applyClasses(wrapper, classes);
 
@@ -201,7 +223,7 @@ HTMLActuator.prototype.updateBestScore = function (bestScore) {
 HTMLActuator.prototype.message = function (won, maxScore) {
 
   var type    = won ? "game-won" : "game-over";
-  var message = won ? "Normal Legacy Clear!" : "满身疮痍。。。";
+  var message = won ? "2048 Clear!" : "满身疮痍。。。";
 
   if (typeof ga !== "undefined") {
     ga("send", "event", "game", "end", type, this.score);
