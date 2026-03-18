@@ -8,7 +8,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.total_spawn = 0;
   this.moves = 0;
   
-  this.startTiles     = 2;
+  this.startTiles = 2;
 
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
@@ -19,9 +19,11 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
 // Restart the game
 GameManager.prototype.restart = function () {
+	if (confirm("确定是否重开？")){
   this.storageManager.clearGameState();
   this.actuator.continueGame(); // Clear the game won/lost message
   this.setup();
+	}
 };
 
 // Keep playing after winning (allows going over 2048)
@@ -205,8 +207,6 @@ GameManager.prototype.move = function (direction) {
           // Update the score
           self.score += merged.value;
           // The mighty 2048 tile
-          /* 2048 = Easy, 4096 = Normal, 8192 = Hard, 16384 = Lunatic,
-             32768 = OverDrive*/
           if (merged.value === 2048) self.won = true;
         } else {
           self.moveTile(tile, positions.farthest);
