@@ -63,12 +63,12 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
 				total_sum_finals += grid.cells[i][j].value;
 		   }
 		   if (total_sum_finals  - maxscore > 0){ 
-				document.getElementsByTagName("span")[10].innerHTML = ((total_sum_finals  - maxscore) / 1024).toFixed(0);
+				document.getElementsByTagName("span")[10].innerHTML = Math.floor((total_sum_finals  - maxscore) / 1024);
 		   } else {
-			   document.getElementsByTagName("span")[10].innerHTML = (-(total_sum_finals  - maxscore) / 1024).toFixed(0);
+			   document.getElementsByTagName("span")[10].innerHTML = Math.floor(-(total_sum_finals  - maxscore) / 1024);
 		   }
 		   
-		 document.getElementsByTagName("span")[11].innerHTML = (maxscore / 1024).toFixed(0);
+		 document.getElementsByTagName("span")[11].innerHTML = Math.floor(maxscore / 1024);
 		  
 		  if (maxscore < 2048){
 			  Diffculty.classList.remove(Diffculty.className);
